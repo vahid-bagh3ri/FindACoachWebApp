@@ -23,12 +23,25 @@ export default {
   components: {
     RequestsItem
   },
+  data() {
+    return {
+      isLoading: false,
+      error: null
+    };
+  },
   computed: {
     receivedRequests() {
       return this.$store.getters['requests/requests'];
     },
     hasRequests() {
       return this.$store.getters['requests/hasRequests'];
+    }
+  },
+  methods: {
+    async loadRequests() {
+      this.isLoading = true;
+      await this.$store.dispatch('requests/fetchRuests');
+      this.isLoading = false;
     }
   }
 };
