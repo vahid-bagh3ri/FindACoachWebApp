@@ -2,7 +2,7 @@ export default {
   async contactCoach(context, payload) {
     const newRequest = {
       userEmail: payload.email,
-      messsage: payload.message
+      message: payload.message
     };
     const response = await fetch(
       `https://find-a-coach-web-app-df0e6-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
