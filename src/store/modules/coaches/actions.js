@@ -34,7 +34,7 @@ export default {
     }
 
     const response = await fetch(
-      `https://find-a-coach-web-app-df0e6-default-rtdb.firebaseio.com/coaches.json`
+      `https://find-a-coach-web-app-df0e6-default-rtdb.firebaseio.com/coaches.jso`
     );
     const responseData = await response.json();
     if (!response.ok) {
