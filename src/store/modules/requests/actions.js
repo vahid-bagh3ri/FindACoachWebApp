@@ -7,7 +7,7 @@ export default {
     const response = await fetch(
       `https://find-a-coach-web-app-df0e6-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
       {
-        methods: 'POST',
+        method: 'POST',
         body: JSON.stringify(newRequest)
       }
     );
