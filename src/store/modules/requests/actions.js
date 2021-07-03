@@ -30,6 +30,7 @@ export default {
     const response = await fetch(
       `https://find-a-coach-web-app-df0e6-default-rtdb.firebaseio.com/requests/${coachId}.json`
     );
+
     const responseData = await response.json();
     if (!response.ok) {
       const error = new Error(
