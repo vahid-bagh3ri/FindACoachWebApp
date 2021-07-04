@@ -1,6 +1,6 @@
 export default {
   login() {},
-  async singup(context, payload) {
+  async signup(context, payload) {
     const response = await fetch(
       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAs8V4lECWOTcPI266qnjXb6YhavldvHQw',
       {
@@ -22,5 +22,10 @@ export default {
       throw error;
     }
     console.log(responseData);
+    context.commit('setUser', {
+      token: responseData.idToken,
+      userId: responseData.localId,
+      tokenExpiration: responseData.expiresIn
+    });
   }
 };
